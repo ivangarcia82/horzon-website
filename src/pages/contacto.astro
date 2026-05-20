@@ -1,0 +1,396 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="HORZON — Contacto">
+  <Header variant="gray" activePage="contacto" />
+
+  <!-- ============ CONTACT FORM ============ -->
+  <section class="contact-form-section" id="contacto">
+    <div class="contact-form-wrap">
+      <h1>Hablemos de oportunidades</h1>
+      <p class="intro">
+        Para brindarte una mejor atención, cuéntanos brevemente el servicio o
+        marca de tu interés.
+      </p>
+
+      <form id="contacto-form">
+        <div class="form-group">
+          <span class="form-label">Servicio</span>
+          <div class="radio-row">
+            <label class="radio-item">
+              <input type="radio" name="servicio" value="taller" checked />
+              <span>Taller automotriz, diésel y carrocerías</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="servicio" value="generadores" />
+              <span>Generadores eléctricos y Torres Iluminadas.</span>
+            </label>
+          </div>
+          <div class="radio-row second">
+            <label class="radio-item">
+              <input type="radio" name="servicio" value="blindaje" />
+              <span>Blindaje automotriz</span>
+            </label>
+            <div class="otros-wrap">
+              <label class="radio-item" style="gap:8px;">
+                <input type="radio" name="servicio" value="otros" />
+                <span>Otros:</span>
+              </label>
+              <input type="text" class="otros-input" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="text-field" placeholder="Nombre" />
+        </div>
+        <div class="form-group">
+          <input type="email" class="text-field" placeholder="Correo" />
+        </div>
+        <div class="form-group">
+          <input type="tel" class="text-field" placeholder="Teléfono" />
+        </div>
+
+        <button type="submit" class="btn-submit">ENVIAR</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="form-divider"></div>
+
+  <!-- ============ INFO ============ -->
+  <section class="info-section">
+    <div class="info-image" role="img" aria-label="Trabajador industrial"></div>
+    <div class="info-content">
+      <svg class="info-h-logo" viewBox="0 0 60 60" aria-hidden="true">
+        <g fill="#6a6a6a">
+          <rect x="10" y="12" width="9" height="36"></rect>
+          <rect x="41" y="12" width="9" height="36"></rect>
+          <rect x="10" y="26" width="40" height="8"></rect>
+          <rect x="10" y="12" width="40" height="3"></rect>
+          <rect x="10" y="45" width="40" height="3"></rect>
+        </g>
+      </svg>
+
+      <h2>ESTAMOS AQUÍ PARA IMPULSARTE</h2>
+      <p class="lead">¡Contáctanos!</p>
+      <p class="phone">+52 (999) 958 9493</p>
+      <address>
+        C.29 # 592 por 6-A y 6-B<br />
+        Col. San Pedro Nohpat.<br />
+        Mérida, Yucatán, México.<br />
+        contacto@horzon.com.mx
+      </address>
+
+      <h3>CONOCE NUESTRAS MARCAS</h3>
+      <p class="social-handles">
+        @altiro.taller @fortemblindajes<br />
+        @reactor.power
+      </p>
+    </div>
+  </section>
+
+  <div class="visit-banner">VISITA NUESTRO NÚCLEO EMPRESARIAL</div>
+
+  <!-- ============ MAP ============ -->
+  <section class="map-section">
+    <iframe
+      title="Ubicación Horzon"
+      src="https://www.google.com/maps?q=Merida,Yucatan,Mexico&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contacto-form');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('¡Gracias! Te contactaremos pronto.');
+  });
+</script>
+
+<style>
+  /* ============ CONTACT FORM SECTION ============ */
+  .contact-form-section {
+    background: var(--gray-section);
+    padding: 40px 80px 0;
+    position: relative;
+  }
+
+  .contact-form-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    color: #fff;
+    padding: 40px 0 60px;
+  }
+
+  .contact-form-wrap h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  .contact-form-wrap .intro {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 520px;
+  }
+
+  .form-group {
+    margin-bottom: 36px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .radio-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 50px;
+    align-items: center;
+    font-size: 12px;
+  }
+  .radio-row.second {
+    margin-top: 18px;
+  }
+
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+
+  .radio-item input[type='radio'] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    background: transparent;
+    margin: 0;
+  }
+
+  .radio-item input[type='radio']:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .otros-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .otros-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    padding: 4px 0;
+    outline: none;
+  }
+
+  .text-field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 8px 0 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .text-field:focus {
+    border-color: #fff;
+  }
+  .text-field::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+  }
+
+  .btn-submit {
+    margin-top: 18px;
+    padding: 14px 36px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    cursor: pointer;
+    font-family: inherit;
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+  .btn-submit:hover {
+    background: #fff;
+    color: var(--gray-section);
+  }
+
+  .form-divider {
+    height: 34px;
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--gray-section) 0,
+      var(--gray-section) 4px,
+      #d6d6d6 4px,
+      #d6d6d6 5px
+    );
+    margin-top: 40px;
+  }
+
+  /* ============ INFO SECTION ============ */
+  .info-section {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    background: #fff;
+    min-height: 560px;
+  }
+
+  .info-image {
+    background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(1) brightness(0.85) contrast(1.1);
+    min-height: 560px;
+  }
+
+  .info-content {
+    padding: 60px 80px;
+    position: relative;
+  }
+
+  .info-h-logo {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .info-content h2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #3a3a3a;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+    margin-top: 120px;
+  }
+
+  .info-content .lead {
+    font-size: 15px;
+    color: #3a3a3a;
+    margin-bottom: 6px;
+  }
+
+  .info-content .phone {
+    font-size: 15px;
+    color: #3a3a3a;
+    margin-bottom: 22px;
+  }
+
+  .info-content address {
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #3a3a3a;
+    margin-bottom: 60px;
+  }
+
+  .info-content h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+
+  .info-content .social-handles {
+    font-size: 14px;
+    color: #3a3a3a;
+    line-height: 1.6;
+  }
+
+  .visit-banner {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 22px 20px;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    font-weight: 500;
+  }
+
+  /* ============ MAP ============ */
+  .map-section {
+    height: 420px;
+  }
+  .map-section iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    filter: grayscale(0.2);
+  }
+
+  @media (max-width: 960px) {
+    .contact-form-section {
+      padding: 20px 24px 0;
+    }
+    .radio-row {
+      gap: 18px;
+    }
+    .info-section {
+      grid-template-columns: 1fr;
+    }
+    .info-image {
+      min-height: 320px;
+    }
+    .info-content {
+      padding: 40px 24px;
+    }
+    .info-content h2 {
+      margin-top: 60px;
+    }
+    .info-h-logo {
+      right: 24px;
+      top: 30px;
+    }
+  }
+</style>
