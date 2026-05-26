@@ -58,10 +58,11 @@ import Footer from '../components/Footer.astro';
               <path d="M7 17L17 7M17 7H8M17 7V16"></path>
             </svg>
           </span>
-          <div class="brand-wordmark">
-            <div class="wm-main">FORTEM</div>
-            <div class="wm-sub">BLINDAJE INTEGRAL</div>
-          </div>
+          <img
+            src="/fortemlogo.png"
+            alt="FORTEM — Blindaje Integral"
+            class="brand-logo"
+          />
         </a>
 
         <a href="#" class="brand-card orange">
@@ -77,12 +78,11 @@ import Footer from '../components/Footer.astro';
               <path d="M7 17L17 7M17 7H8M17 7V16"></path>
             </svg>
           </span>
-          <div class="brand-wordmark">
-            <div class="wm-main">ALTIRO</div>
-            <div class="wm-sub">
-              AUTOMOTRIZ DIESEL<br />&amp; CARROCERÍAS
-            </div>
-          </div>
+          <img
+            src="/altirologo.jpg"
+            alt="ALTIRO — Automotriz Diesel & Carrocerías"
+            class="brand-logo brand-logo-altiro"
+          />
         </a>
 
         <a href="#" class="brand-card green">
@@ -98,10 +98,11 @@ import Footer from '../components/Footer.astro';
               <path d="M7 17L17 7M17 7H8M17 7V16"></path>
             </svg>
           </span>
-          <div class="brand-wordmark">
-            <div class="wm-main">REACTOR</div>
-            <div class="wm-sub">POWER CONNECT</div>
-          </div>
+          <img
+            src="/reactorlogo.png"
+            alt="REACTOR — Power Connect"
+            class="brand-logo"
+          />
         </a>
       </div>
 
@@ -117,15 +118,7 @@ import Footer from '../components/Footer.astro';
   <section class="quote-section">
     <div class="quote-bg"></div>
     <div class="quote-card">
-      <svg class="quote-mark" viewBox="0 0 60 60" fill="none" aria-hidden="true">
-        <g fill="#8a8a8a">
-          <rect x="12" y="14" width="7" height="32"></rect>
-          <rect x="41" y="14" width="7" height="32"></rect>
-          <rect x="12" y="26" width="36" height="8"></rect>
-          <rect x="12" y="14" width="36" height="3"></rect>
-          <rect x="12" y="43" width="36" height="3"></rect>
-        </g>
-      </svg>
+      <img src="/Gris-.png" alt="" aria-hidden="true" class="quote-mark" />
       <p class="quote-text">
         En Horzon creemos en<br />
         horizontes sin límites
@@ -344,60 +337,19 @@ import Footer from '../components/Footer.astro';
     font-size: 18px;
   }
 
-  .brand-wordmark {
-    color: #fff;
-    text-align: center;
+  .brand-logo {
+    width: 75%;
+    max-width: 220px;
+    height: auto;
+    object-fit: contain;
     padding: 20px;
-    font-family: 'Montserrat', sans-serif;
   }
 
-  /* FORTEM wordmark - tall sans */
-  .brand-card.red .wm-main {
-    font-size: 34px;
-    font-weight: 300;
-    letter-spacing: 0.28em;
-    margin-bottom: 8px;
-  }
-  .brand-card.red .wm-sub {
-    font-size: 10px;
-    letter-spacing: 0.35em;
-    font-weight: 500;
-  }
-
-  /* ALTIRO wordmark - italic */
-  .brand-card.orange .wm-main {
-    font-size: 38px;
-    font-weight: 900;
-    font-style: italic;
-    letter-spacing: -0.02em;
-    color: #111;
-    margin-bottom: 6px;
-    transform: skewX(-8deg);
-  }
-  .brand-card.orange .wm-sub {
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    color: #111;
-    text-align: center;
-    line-height: 1.4;
-  }
-
-  /* REACTOR wordmark - condensed green */
-  .brand-card.green .wm-main {
-    font-size: 38px;
-    font-weight: 900;
-    font-style: italic;
-    letter-spacing: 0.02em;
-    color: #7dcf3f;
-    margin-bottom: 6px;
-    font-family: 'Arial Black', sans-serif;
-  }
-  .brand-card.green .wm-sub {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    font-weight: 700;
-    color: #7dcf3f;
+  /* ALTIRO logo is a JPG with a white background — blend it out */
+  .brand-logo-altiro {
+    mix-blend-mode: multiply;
+    width: 80%;
+    max-width: 240px;
   }
 
   .carousel-dots {
@@ -455,8 +407,9 @@ import Footer from '../components/Footer.astro';
 
   .quote-mark {
     display: inline-block;
-    width: 48px;
-    height: 48px;
+    width: 72px;
+    height: auto;
+    object-fit: contain;
     margin-bottom: 36px;
   }
 
